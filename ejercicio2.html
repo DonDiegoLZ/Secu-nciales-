@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversión de pesos a dólares</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Convertir pesos colombianos a dólares</h1>
+  <p>Introduce la cantidad en COP y la tasa de cambio:</p>
+  <input type="number" id="cop" placeholder="Pesos Colombianos (COP)" />
+  <input type="number" id="tasa" placeholder="Tasa de cambio (COP/USD)" />
+  <br />
+  <button onclick="convertir()">Convertir</button>
+  <p id="resultado"></p>
+
+  <script>
+    function convertir() {
+      const cop = parseFloat(document.getElementById("cop").value);
+      const tasa = parseFloat(document.getElementById("tasa").value);
+      if (!isNaN(cop) && !isNaN(tasa) && tasa > 0) {
+        const dolares = cop / tasa;
+        document.getElementById("resultado").innerText = `Puedes adquirir: $${dolares.toFixed(2)} USD`;
+      } else {
+        document.getElementById("resultado").innerText = "Por favor, ingresa valores válidos.";
+      }
+    }
+  </script>
+</body>
+</html>

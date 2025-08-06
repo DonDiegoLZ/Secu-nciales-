@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4 - Valor Parqueadero</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Valor a Pagar por Parqueadero</h2>
+  <p>Introduce las horas que estuvo el vehículo:</p>
+  <input type="number" id="horas" placeholder="Horas" />
+  <button onclick="calcularParqueo()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularParqueo() {
+      const horas = parseFloat(document.getElementById('horas').value);
+      const tarifa = 2000;
+      if (!isNaN(horas) && horas > 0) {
+        const total = Math.ceil(horas) * tarifa;
+        document.getElementById('resultado').innerText = `Valor a pagar: $${total}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Cantidad inválida de horas';
+      }
+    }
+  </script>
+</body>
+</html>

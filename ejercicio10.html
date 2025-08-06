@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 10 - Pago Agua</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Pago por Agua</h2>
+  <p>Introduce los metros cúbicos consumidos:</p>
+  <input type="number" id="consumo" placeholder="m³ consumidos" />
+  <button onclick="calcularPago()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularPago() {
+      const consumo = parseFloat(document.getElementById('consumo').value);
+      const valorMetro = 2500;
+      if (!isNaN(consumo) && consumo >= 0) {
+        const total = consumo * valorMetro;
+        document.getElementById('resultado').innerText = `Pago: $${total}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Consumo inválido';
+      }
+    }
+  </script>
+</body>
+</html>

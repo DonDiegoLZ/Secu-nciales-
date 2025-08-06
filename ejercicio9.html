@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 9 - Valor Llamada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Valor de una Llamada</h2>
+  <p>Introduce la duración de la llamada (en minutos):</p>
+  <input type="number" id="minutos" placeholder="Minutos" />
+  <button onclick="calcularValor()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularValor() {
+      const minutos = parseFloat(document.getElementById('minutos').value);
+      const tarifa = 120;
+      if (!isNaN(minutos) && minutos > 0) {
+        const total = Math.ceil(minutos) * tarifa;
+        document.getElementById('resultado').innerText = `Valor a pagar: $${total}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Duración inválida';
+      }
+    }
+  </script>
+</body>
+</html>

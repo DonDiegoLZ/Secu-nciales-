@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 15 - Potencia Eléctrica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Potencia Eléctrica de un Circuito</h2>
+  <p>Introduce el voltaje (V):</p>
+  <input type="number" id="voltaje" placeholder="Voltios (V)">
+  <button onclick="calcularPotencia()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularPotencia() {
+      const V = parseFloat(document.getElementById("voltaje").value);
+      const R = 4; // ohmios
+      if (!isNaN(V)) {
+        const I = V / R;
+        const P = V * I;
+        document.getElementById("resultado").innerHTML = `
+          Corriente: ${I.toFixed(2)} A<br>
+          Potencia: ${P.toFixed(2)} W
+        `;
+      } else {
+        document.getElementById("resultado").innerText = "Voltaje inválido";
+      }
+    }
+  </script>
+</body>
+</html>

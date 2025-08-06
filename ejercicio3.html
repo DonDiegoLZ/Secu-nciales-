@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 - Calcular Edad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Calcular Edad</h2>
+  <p>Introduce tu año de nacimiento:</p>
+  <input type="number" id="nacimiento" placeholder="Año de nacimiento" />
+  <button onclick="calcularEdad()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularEdad() {
+      const nacimiento = parseInt(document.getElementById('nacimiento').value);
+      const actual = new Date().getFullYear();
+      if (!isNaN(nacimiento) && nacimiento > 1900 && nacimiento <= actual) {
+        const edad = actual - nacimiento;
+        document.getElementById('resultado').innerText = `Tienes ${edad} años.`;
+      } else {
+        document.getElementById('resultado').innerText = 'Año inválido';
+      }
+    }
+  </script>
+</body>
+</html>

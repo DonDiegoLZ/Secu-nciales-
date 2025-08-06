@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 22 - Utilidad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Utilidad de un Producto</h2>
+  <p>Introduce el precio de venta y el costo:</p>
+  <input type="number" id="venta" placeholder="Precio de venta">
+  <input type="number" id="costo" placeholder="Costo">
+  <button onclick="calcularUtilidad()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularUtilidad() {
+      const venta = parseFloat(document.getElementById('venta').value);
+      const costo = parseFloat(document.getElementById('costo').value);
+      if (!isNaN(venta) && !isNaN(costo)) {
+        const utilidad = venta - costo;
+        document.getElementById('resultado').innerText = `Utilidad: $${utilidad}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Valores inválidos';
+      }
+    }
+  </script>
+</body>
+</html>

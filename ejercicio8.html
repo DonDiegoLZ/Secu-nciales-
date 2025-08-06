@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 8 - Tiempo de Viaje</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Tiempo de Viaje</h2>
+  <p>Introduce la distancia (km) y la velocidad promedio (km/h):</p>
+  <input type="number" id="distancia" placeholder="Distancia (km)" />
+  <input type="number" id="velocidad" placeholder="Velocidad (km/h)" />
+  <button onclick="calcularTiempo()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularTiempo() {
+      const d = parseFloat(document.getElementById('distancia').value);
+      const v = parseFloat(document.getElementById('velocidad').value);
+      if (!isNaN(d) && !isNaN(v) && v > 0) {
+        const t = d / v;
+        document.getElementById('resultado').innerText = `Tiempo de viaje: ${t.toFixed(2)} horas`;
+      } else {
+        document.getElementById('resultado').innerText = 'Valores inválidos';
+      }
+    }
+  </script>
+</body>
+</html>

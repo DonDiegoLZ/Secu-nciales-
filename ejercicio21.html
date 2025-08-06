@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 21 - Tiempo de Vida</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Tiempo de Vida Aproximado</h2>
+  <p>Introduce tu edad en años:</p>
+  <input type="number" id="edad" placeholder="Edad">
+  <button onclick="calcularVida()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularVida() {
+      const edad = parseInt(document.getElementById('edad').value);
+      if (!isNaN(edad) && edad >= 0) {
+        const meses = edad * 12;
+        const semanas = edad * 52;
+        const dias = edad * 365;
+        const horas = dias * 24;
+        document.getElementById('resultado').innerHTML = `
+          Meses: ${meses}<br>
+          Semanas: ${semanas}<br>
+          Días: ${dias}<br>
+          Horas: ${horas}
+        `;
+      } else {
+        document.getElementById('resultado').innerText = 'Edad inválida';
+      }
+    }
+  </script>
+</body>
+</html>

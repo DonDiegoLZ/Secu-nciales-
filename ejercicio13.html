@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 13 - Ahorro Anual</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Ahorro Anual</h2>
+  <p>Introduce el ahorro mensual:</p>
+  <input type="number" id="mensual" placeholder="Ahorro mensual" />
+  <button onclick="calcularAhorro()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularAhorro() {
+      const mensual = parseFloat(document.getElementById('mensual').value);
+      if (!isNaN(mensual) && mensual > 0) {
+        const total = mensual * 12;
+        document.getElementById('resultado').innerText = `Ahorro en un año: $${total}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Valor inválido';
+      }
+    }
+  </script>
+</body>
+</html>

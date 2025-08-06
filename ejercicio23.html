@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Ejercicio 23 - Costo del Hospedaje</title>
+</head>
+<body>
+  <h2>Costo del Hospedaje</h2>
+  <p>Introduce el número de noches y el valor por noche:</p>
+  <input type="number" id="noches" placeholder="Noches">
+  <input type="number" id="valorNoche" placeholder="Valor por noche">
+  <button onclick="calcularHospedaje()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularHospedaje() {
+      const noches = parseInt(document.getElementById('noches').value);
+      const valor = parseFloat(document.getElementById('valorNoche').value);
+      if (!isNaN(noches) && !isNaN(valor)) {
+        const total = noches * valor;
+        document.getElementById('resultado').innerText = `Costo total: $${total}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Valores inválidos';
+      }
+    }
+  </script>
+</body>
+</html>

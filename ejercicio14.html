@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 14 - Monto del Cheque</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Monto del Cheque</h2>
+  <p>Introduce el número de días del viaje:</p>
+  <input type="number" id="dias" placeholder="Días del viaje" />
+  <button onclick="calcularCheque()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularCheque() {
+      const dias = parseInt(document.getElementById('dias').value);
+      const hotel = 150000;
+      const comida = 60000;
+      const otros = 90000;
+      if (!isNaN(dias) && dias > 0) {
+        const totalHotel = dias * hotel;
+        const totalComida = dias * comida;
+        const totalOtros = dias * otros;
+        const total = totalHotel + totalComida + totalOtros;
+        document.getElementById('resultado').innerHTML = `
+          <strong>Desglose:</strong><br>
+          Hotel: $${totalHotel}<br>
+          Comida: $${totalComida}<br>
+          Otros: $${totalOtros}<br>
+          <strong>Total: $${total}</strong>
+        `;
+      } else {
+        document.getElementById('resultado').innerText = 'Ingrese un número válido de días';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5 - Costo Pintar Casa</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Costo de Pintar una Casa</h2>
+  <p>Introduce los metros cuadrados a pintar:</p>
+  <input type="number" id="metros" placeholder="Metros cuadrados" />
+  <button onclick="calcularCosto()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularCosto() {
+      const metros = parseFloat(document.getElementById('metros').value);
+      const costoMetro = 3500;
+      if (!isNaN(metros) && metros > 0) {
+        const total = metros * costoMetro;
+        document.getElementById('resultado').innerText = `Costo total: $${total}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Metros inválidos';
+      }
+    }
+  </script>
+</body>
+</html>

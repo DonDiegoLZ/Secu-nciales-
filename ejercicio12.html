@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 12 - Descuento e IVA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Precio con Descuento e IVA</h2>
+  <p>Introduce el precio original:</p>
+  <input type="number" id="precio" placeholder="Precio" />
+  <button onclick="calcularFinal()">Calcular</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularFinal() {
+      const precio = parseFloat(document.getElementById('precio').value);
+      const descuento = 0.10;
+      const iva = 0.19;
+      if (!isNaN(precio) && precio > 0) {
+        const conDescuento = precio - (precio * descuento);
+        const conIva = conDescuento + (conDescuento * iva);
+        document.getElementById('resultado').innerText = `Precio final: $${conIva.toFixed(2)}`;
+      } else {
+        document.getElementById('resultado').innerText = 'Precio inválido';
+      }
+    }
+  </script>
+</body>
+</html>
